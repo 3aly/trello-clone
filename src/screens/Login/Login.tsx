@@ -3,6 +3,9 @@ import { Button, TextField, Box, Typography, Container } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { useNavigate } from "react-router-dom";
+import { IMAGES } from "../../assets/images";
+import { COLORS } from "../../constants/colors";
+import { useStyles } from "./Login.styles";
 
 function Login() {
   const navigate = useNavigate();
@@ -11,37 +14,17 @@ function Login() {
     // Perform login logic here...
     navigate("/splash"); // Navigate to the splash screen after login
   };
-  //   return (
-  //     // <Container sx={{ backgroundColor: "#FF725E", flex: 1 }}>
-  //     //   <Stack spacing={2}>
-  //     //     <Container>
-  //     //       <Button
-  //     //         disableElevation
-  //     //         variant="outlined"
-  //     //         sx={{
-  //     //           color: "#ffff",
-  //     //           borderColor: "#ffff",
-  //     //           width: "50%",
-  //     //           borderRadius: 20,
-  //     //           borderWidth: 3,
-  //     //         }}
-  //     //       >
-  //     //         Primary
-  //     //       </Button>
-  //     //     </Container>
-  //     //   </Stack>
-  //     //   Login
-  //       // </Container>
-  //       <div</dic>
-  //   );
+
+  const { classes } = useStyles();
+
   return (
-    <Container
-      component="main"
+    <div
       //   maxWidth="xs"
       style={{
-        backgroundColor: "#FF725E",
-        padding: "20px",
-        borderRadius: "8px",
+        flex: 1,
+        backgroundColor: COLORS.primary,
+        // padding: "20px",
+        // borderRadius: "8px",
       }}
     >
       <Box
@@ -52,11 +35,17 @@ function Login() {
           alignItems: "center",
         }}
       >
-        <Typography component="h1" variant="h5" sx={{ color: "white" }}>
-          Sign in
-        </Typography>
+        <img src={IMAGES.logo} width={500} height={350} />
+
         <Box component="form" noValidate sx={{ mt: 1 }}>
           <TextField
+            className={classes.inputField}
+            InputLabelProps={{
+              style: {
+                lineHeight: 1,
+                color: "white",
+              },
+            }}
             margin="normal"
             required
             fullWidth
@@ -67,8 +56,15 @@ function Login() {
             autoFocus
           />
           <TextField
+            className={classes.inputField}
             margin="normal"
             required
+            InputLabelProps={{
+              style: {
+                lineHeight: 1,
+                color: "white",
+              },
+            }}
             fullWidth
             name="password"
             label="Password"
@@ -103,7 +99,7 @@ function Login() {
           </Button>
         </Box>
       </Box>
-    </Container>
+    </div>
   );
 }
 

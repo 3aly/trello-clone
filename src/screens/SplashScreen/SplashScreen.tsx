@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import { taskloader } from "../../assets/animations";
+import { Container } from "@mui/material";
 
 function SplashScreen() {
   const navigate = useNavigate();
@@ -7,11 +10,11 @@ function SplashScreen() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/home"); // Navigate to the home screen after 2 seconds
-    }, 2000);
+    }, 5000);
   }, [navigate]);
 
   return (
-    <div
+    <Container
       style={{
         display: "flex",
         justifyContent: "center",
@@ -19,8 +22,8 @@ function SplashScreen() {
         height: "100vh",
       }}
     >
-      <h1>Loading...</h1>
-    </div>
+      <Lottie animationData={taskloader} loop={true} />
+    </Container>
   );
 }
 
