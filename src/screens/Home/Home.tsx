@@ -1,14 +1,11 @@
-import React, { Fragment } from "react";
-import { Container } from "@mui/material";
 import { HomeHeader, TaskBoard } from "@components/organisms";
 import { useSelector } from "react-redux";
+import { AppState } from "../../types/props";
 
 function Home() {
-  const taskBoards = useSelector(
-    (state: { boards: [{ name: string; tasks: [] }] }) => {
-      return state.boards;
-    }
-  );
+  const taskBoards = useSelector((state: AppState) => {
+    return state.boards;
+  });
   return (
     <div>
       <HomeHeader />

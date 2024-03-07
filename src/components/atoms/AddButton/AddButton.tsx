@@ -1,5 +1,4 @@
 import React, { MouseEventHandler } from "react";
-import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import { useStyles } from "./AddButton.styles";
 import { Button } from "@mui/material";

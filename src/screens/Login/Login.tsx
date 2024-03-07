@@ -1,5 +1,4 @@
-import React from "react";
-import { Button, TextField, Box, Typography, Container } from "@mui/material";
+import { Button, TextField, Box } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { useNavigate } from "react-router-dom";
@@ -57,24 +56,24 @@ function Login() {
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ mt: 3, mb: 2, backgroundColor: "white" }}
+          className={classes.button}
           onClick={handleLogin}
         >
           Sign In
         </Button>
         <Button
           fullWidth
-          variant="outlined"
+          className={classes.socialButton}
+          variant="contained"
           startIcon={<GoogleIcon />}
-          sx={{ mt: 2, mb: 2, backgroundColor: "white" }}
         >
           Sign in with Google
         </Button>
         <Button
           fullWidth
-          variant="outlined"
+          className={classes.socialButton}
+          variant="contained"
           startIcon={<FacebookIcon />}
-          sx={{ mt: 2, mb: 2, backgroundColor: "white", color: "black" }}
         >
           Sign in with Facebook
         </Button>

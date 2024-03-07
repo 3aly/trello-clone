@@ -9,10 +9,10 @@ module.exports = {
       "@assets": path.resolve(__dirname, "src/assets"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@redux": path.resolve(__dirname, "src/redux"),
+      // "@types": path.resolve(__dirname, "src/types"),
+
       "@fakers": path.resolve(__dirname, "src/fakers"),
       "@modals": path.resolve(__dirname, "src/modals"),
-      "@types": path.resolve(__dirname, "src/types"),
-      // Add other aliases as needed
     },
   },
 };

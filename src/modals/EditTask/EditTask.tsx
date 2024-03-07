@@ -1,44 +1,28 @@
 import { RoundedAddButton } from "@components/atoms";
 import {
-  Button,
   Modal,
   TextField,
   Typography,
   useMediaQuery,
   Box,
   useTheme,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
 } from "@mui/material";
-import React, { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useStyles } from "./EditTask.styles";
 import { useDispatch } from "react-redux";
 import { editTask } from "@redux/taskBoardsReducer";
+import { EditTaskProps } from "../../types/props";
 
-const EditTask = ({
-  open,
-  setOpen,
-  taskIndex,
-  taskStatus,
-}: {
-  open: boolean;
-  setOpen: Function;
-  taskIndex: number;
-  taskStatus: string;
-}) => {
+const EditTask = ({ open, setOpen, taskIndex, taskStatus }: EditTaskProps) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  // const [taskStatus, setTaskStatus] = useState("");
   const [errors, setErrors] = useState({ title: "", description: "" });
 
   const theme = useTheme();
   const { classes } = useStyles();
   const dispatch = useDispatch();
-  const largeScreen = useMediaQuery(theme.breakpoints.up("lg")); // screens larger than 1200px
-  const mediumScreen = useMediaQuery(theme.breakpoints.between("md", "lg")); // screens between 900px and 1200px
-  const smallScreen = useMediaQuery(theme.breakpoints.down("md")); // screens smaller than 900px
+  const largeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const mediumScreen = useMediaQuery(theme.breakpoints.between("md", "lg"));
 
   const handleClose = () => setOpen(false);
   const handleNameChange = (event: {
@@ -49,27 +33,23 @@ const EditTask = ({
   }) => setDescription(event.target.value);
 
   const handleSubmit = () => {
-    // console.log(taskName, taskDescription, taskStatus);
     let hasErrors = false;
     let newErrors = { title: "", description: "" };
 
-    // Validate title
     if (!title.trim()) {
       newErrors.title = "Title is required";
       hasErrors = true;
     }
 
-    // Validate description
     if (!description.trim()) {
       newErrors.description = "Description is required";
       hasErrors = true;
     }
 
-    setErrors(newErrors); // Update error messages
+    setErrors(newErrors);
 
-    if (hasErrors) return; // Stop the submission if there are errors
+    if (hasErrors) return;
 
-    // If there are no errors, proceed to dispatch the editTask action
     if (taskIndex !== null) {
       dispatch(
         editTask({
@@ -81,7 +61,7 @@ const EditTask = ({
           },
         })
       );
-      setErrors({ title: "", description: "" }); // Reset errors
+      setErrors({ title: "", description: "" });
     }
 
     handleClose();
@@ -90,7 +70,7 @@ const EditTask = ({
   const getModalStyle = () => {
     if (largeScreen) return { width: "50%" };
     if (mediumScreen) return { width: "70%" };
-    return { width: "90%" }; // Default for small screens
+    return { width: "90%" };
   };
 
   const style = {
@@ -102,7 +82,7 @@ const EditTask = ({
     boxShadow: 24,
     p: 4,
     borderRadius: 5,
-    ...getModalStyle(), // Apply the responsive width
+    ...getModalStyle(),
   };
 
   return (

@@ -9,12 +9,10 @@ const Navigators = () => {
   return (
     <div className={classes.container}>
       <Router>
-        {/* Other components like Navbar can go here */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/splash" element={<SplashScreen />} />
           <Route path="/home" element={<Home />} />
-          {/* Add more routes here */}
         </Routes>
       </Router>
     </div>

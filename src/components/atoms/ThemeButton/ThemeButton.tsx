@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import { MouseEventHandler } from "react";
 import { useStyles } from "./ThemeButton.styles";
 import { IconButton } from "@mui/material";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -15,12 +15,7 @@ const ThemeButton = ({
     (state: { theme: { darkMode: boolean } }) => state.theme
   );
   return (
-    <IconButton
-      className={classes.button}
-      size="large"
-      onClick={onClick}
-      // color={"main"}
-    >
+    <IconButton className={classes.button} size="large" onClick={onClick}>
       {darkMode ? (
         <>
           <WbSunnyOutlinedIcon />

@@ -3,25 +3,18 @@ import { makeStyles } from "tss-react/mui";
 export const useStyles = makeStyles()((theme) => {
   return {
     inputField: {
-      //   width: "50%",
       input: {
         color: theme.palette.primary.light,
-
-        // height: "10px",
-        // lineHeight: "1px", // Add this line to maintain vertical centering
-        // textAlign: "center", // Add this line to center the placeholder text
-        // color: theme.palette.primary.light,
       },
 
       "& .MuiOutlinedInput-root": {
         "&:hover .MuiOutlinedInput-notchedOutline": {
           color: "white",
-          borderColor: theme.palette.primary.light, // Change to your desired hover color
+          borderColor: theme.palette.primary.light,
         },
         "& fieldset": {
           borderWidth: 2,
           borderRadius: 8,
-          //   borderStyle: "solid",
           borderColor: theme.palette.primary.light,
         },
 
@@ -30,7 +23,6 @@ export const useStyles = makeStyles()((theme) => {
           borderRadius: 8,
           borderStyle: "solid",
           color: "red",
-          // borderColor: theme.palette.primary.light,
         },
       },
     },
@@ -46,16 +38,13 @@ export const useStyles = makeStyles()((theme) => {
       // paddingRight: "0.5%",
     },
     board: {
-      // backgroundColor: "#0079bf",
       width: "30%",
       padding: "20px",
       flex: 0.3,
-      // color: "#0079bf",
     },
     column: {
       backgroundColor: theme.palette.primary.main,
       minWidth: "300px",
-      // margin: "0 10px",
       padding: "5%",
 
       borderRadius: 15,
@@ -64,7 +53,7 @@ export const useStyles = makeStyles()((theme) => {
       margin: "6px",
     },
     cardContent: {
-      padding: "8px !important", // Override default padding
+      padding: "8px !important",
       "&:last-child": {
         paddingBottom: "8px",
       },

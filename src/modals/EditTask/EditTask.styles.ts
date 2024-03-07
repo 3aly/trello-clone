@@ -1,4 +1,3 @@
-import { COLORS } from "@constants/colors";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
@@ -7,9 +6,6 @@ export const useStyles = makeStyles()((theme) => {
       position: "absolute",
       top: "50%",
       left: "50%",
-      // borderRadius: "5%",
-      // boxShadow: 24,
-      // borderRadius: 5,
     },
     inputField: {
       //   width: "50%",

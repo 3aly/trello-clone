@@ -2,7 +2,6 @@ import React, { MouseEventHandler } from "react";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import { useStyles } from "./RoundedAddButton.styles";
-import { Button } from "@mui/material";
 
 const RoundedAddButton = ({
   onClick,

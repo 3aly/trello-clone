@@ -1,5 +1,4 @@
 import { makeStyles } from "tss-react/mui";
-import { COLORS } from "../../constants/colors";
 
 export const useStyles = makeStyles()((theme) => {
   return {
@@ -11,6 +10,27 @@ export const useStyles = makeStyles()((theme) => {
       minHeight: "100vh",
       backgroundColor: theme.palette.primary.main,
       padding: theme.spacing(3),
+    },
+    button: {
+      borderWidth: 2,
+      borderRadius: 8,
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.secondary.contrastText,
+
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2),
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
+    socialButton: {
+      borderWidth: 2,
+      borderRadius: 8,
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2),
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
     },
     inputField: {
       input: {

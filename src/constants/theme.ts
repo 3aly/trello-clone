@@ -1,15 +1,14 @@
 import { createTheme } from "@mui/material/styles";
 import { COLORS, DARK } from "./colors";
 
-// Create a custom theme
 export const lightTheme = createTheme({
   breakpoints: {
     values: {
-      xs: 0, // small devices
-      sm: 600, // medium devices
-      md: 900, // large devices
-      lg: 1200, // extra large devices
-      xl: 1536, // extra extra large devices
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
     },
   },
   palette: {
@@ -18,6 +17,8 @@ export const lightTheme = createTheme({
     },
     secondary: {
       main: "#ffff",
+      light: "#ffff",
+      contrastText: "#000",
     },
   },
 });
@@ -25,11 +26,11 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   breakpoints: {
     values: {
-      xs: 0, // small devices
-      sm: 600, // medium devices
-      md: 900, // large devices
-      lg: 1200, // extra large devices
-      xl: 1536, // extra extra large devices
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
     },
   },
   palette: {
@@ -38,7 +39,8 @@ export const darkTheme = createTheme({
     },
     secondary: {
       main: "#000",
+      light: "#3a474e",
+      contrastText: "#ffff",
     },
   },
-  // You can also customize other theme properties
 });

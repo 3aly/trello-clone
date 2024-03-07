@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from "react";
 import { useStyles } from "./SortButton.styles";
 import { IconButton } from "@mui/material";
-import SortByAlphaIcon from "@mui/icons-material/SortByAlpha"; // Import sort icon
+import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 
 const SortButton = ({
   onClick,

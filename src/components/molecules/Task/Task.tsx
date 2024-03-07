@@ -1,15 +1,9 @@
 import {
-  AppBar,
   Box,
   Card,
   CardContent,
   Chip,
-  Container,
-  Grid,
   IconButton,
-  Paper,
-  Stack,
-  Toolbar,
   Typography,
 } from "@mui/material";
 import { useStyles } from "./Task.styles";
@@ -19,20 +13,11 @@ import { deleteTask } from "@redux/taskBoardsReducer";
 import { useDispatch } from "react-redux";
 import { EditTask } from "@modals/index";
 import { useState } from "react";
+import { StatusTypes, TaskProps } from "../../../types/props";
 
-type TaskProps = {
-  task: {
-    title: string;
-    description: string;
-    status: "Not Started" | "In Progress" | "Finished";
-  };
-  index: number;
-  onDragStart: (event: React.DragEvent<HTMLDivElement>, index: number) => void;
-};
 const Task = ({ task, index, onDragStart }: TaskProps) => {
   const { classes } = useStyles();
   const dispatch = useDispatch();
-  type TaskStatus = "Not Started" | "In Progress" | "Finished";
 
   function handleEdit(task: {
     title: string;
@@ -47,21 +32,16 @@ const Task = ({ task, index, onDragStart }: TaskProps) => {
     status,
   }: {
     index: number;
-    status: TaskStatus;
+    status: StatusTypes;
   }) {
-    // Logic to handle deleting a task
-    // console.log("index, status", index, status);
     dispatch(deleteTask({ status, index }));
-
-    // This might involve updating your component's state or making an API call to delete the task.
-    // Ensure to confirm deletion before proceeding.
   }
   const [openTaskModal, setOpenTaskModal] = useState(false);
 
-  const statusColors: Record<TaskStatus, string> = {
-    "Not Started": "#cccccc", // Grey
-    "In Progress": "#ffcc00", // Yellow
-    Finished: "#00cc66", // Green
+  const statusColors: Record<StatusTypes, string> = {
+    "Not Started": "#cccccc",
+    "In Progress": "#ffcc00",
+    Finished: "#00cc66",
   };
 
   const pillColor = statusColors[task.status];
@@ -70,22 +50,13 @@ const Task = ({ task, index, onDragStart }: TaskProps) => {
       key={index}
       className={classes.card}
       draggable
-      onDragStart={(e) => onDragStart(e, index)} // Use the passed onDragStart prop here
+      onDragStart={(e) => onDragStart(e, index)}
     >
       <CardContent className={classes.cardContent}>
-        {/* <Box> */}
         <Typography variant="h6">{task.title}</Typography>
 
-        {/* </Box> */}
         <Typography variant="body2">{task.description}</Typography>
-        <div
-          style={{
-            marginTop: "10px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <div className={classes.task}>
           <Chip
             label={task.status}
             size="small"

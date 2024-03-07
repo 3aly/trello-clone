@@ -3,25 +3,20 @@ import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import { taskloader } from "../../assets/animations";
 import { Container } from "@mui/material";
+import { useStyles } from "./SplashScreen.styles";
 
 function SplashScreen() {
   const navigate = useNavigate();
+  const { classes } = useStyles();
 
   useEffect(() => {
     setTimeout(() => {
-      navigate("/home"); // Navigate to the home screen after 2 seconds
+      navigate("/home");
     }, 5000);
   }, [navigate]);
 
   return (
-    <Container
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
+    <Container className={classes.container}>
       <Lottie animationData={taskloader} loop={true} />
     </Container>
   );

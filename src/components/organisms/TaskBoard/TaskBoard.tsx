@@ -6,16 +6,13 @@ import { toggleSortTasks, updateTaskStatus } from "@redux/taskBoardsReducer";
 import { useDispatch } from "react-redux";
 import { SortButton } from "@components/atoms";
 import { useState } from "react";
+import { TaskType } from "../../../types/props";
 const TaskBoard = ({
   title,
   tasks,
 }: {
   title: string;
-  tasks: Array<{
-    title: string;
-    description: string;
-    status: "Not Started" | "In Progress" | "Finished";
-  }>;
+  tasks: Array<TaskType>;
 }) => {
   const { classes } = useStyles();
   const dispatch = useDispatch();
@@ -27,7 +24,7 @@ const TaskBoard = ({
   );
 
   const handleSortTasks = () => {
-    dispatch(toggleSortTasks({ status: title })); // Dispatch the sorting action
+    dispatch(toggleSortTasks({ status: title }));
   };
   const handleDragStart = (
     e: React.DragEvent<HTMLDivElement>,
