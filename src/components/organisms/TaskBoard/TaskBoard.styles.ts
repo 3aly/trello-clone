@@ -46,6 +46,8 @@ export const useStyles = makeStyles()((theme) => {
       backgroundColor: theme.palette.primary.main,
       minWidth: "300px",
       padding: "5%",
+      boxShadow:
+        "4px 10px 6px -2px rgba(0, 0, 0, 0.2), -4px 10px 6px -2px rgba(0, 0, 0, 0.2)", // Shadows on both sides
 
       borderRadius: 15,
     },
