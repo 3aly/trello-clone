@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Flowrello
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[onboarding.webm](https://github.com/3aly/trello-clone/assets/77078308/fc800ad1-ea93-459f-a091-4507c4e95d58)
 
-## Available Scripts
+Flowrello is a dynamic and intuitive Kanban board project designed to help teams and individuals organize their workflows more effectively. Built with React.js and leveraging Material UI for a sleek and user-friendly interface, Flowrello offers a range of features tailored to enhance productivity and project management.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Dark Mode**: Choose between a light and dark theme for a personalized user experience that suits your preference or ambient lighting conditions.
+- [darkmode.webm](https://github.com/3aly/trello-clone/assets/77078308/4ece4eed-d371-43dd-a4f4-b1c00b465bc1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Caching Capabilities**: With advanced caching, your tasks and board state are preserved between sessions, ensuring that no data is lost when you refresh or leave the page.
+- [add.webm](https://github.com/3aly/trello-clone/assets/77078308/04efb340-7204-49a4-8b70-715b9dd328a1)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Drag and Drop**: Effortlessly change the status of tasks with our intuitive drag-and-drop interface, making task management both easy and efficient.
+- [dragdrop.webm](https://github.com/3aly/trello-clone/assets/77078308/c5febace-c592-4941-b5d4-f919a537f703)
 
-### `npm test`
+- **Task Sorting and Searching**: Keep your projects organized with the ability to sort tasks by priority, deadline, or custom parameters, helping you stay on top of your workflow.
+- [sortsearch.webm](https://github.com/3aly/trello-clone/assets/77078308/683bed92-af70-40ab-a4ab-01b5512f0d8b)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Task Edit and Delete**: Quickly find exactly what you're looking for with our responsive search functionality, enabling you to filter and locate tasks with ease.
+- 
+[deleteedit.webm](https://github.com/3aly/trello-clone/assets/77078308/9984eea5-5a92-473b-bd07-b87b5b741bb9)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To set up Flowrello locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/3aly/flowrello.git
+cd flowrello
 
-### `npm run eject`
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start
