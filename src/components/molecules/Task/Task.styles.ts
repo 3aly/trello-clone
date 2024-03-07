@@ -26,7 +26,7 @@ export const useStyles = makeStyles()((theme) => {
       },
     },
     title: {
-      color: "white",
+      color: theme.palette.primary.contrastText,
     },
   };
 });

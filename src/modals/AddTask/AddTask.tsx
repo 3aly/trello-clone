@@ -1,6 +1,5 @@
 import { RoundedAddButton } from "@components/atoms";
 import {
-  Button,
   Modal,
   TextField,
   Typography,
@@ -13,7 +12,7 @@ import {
   MenuItem,
   FormHelperText,
 } from "@mui/material";
-import React, { SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import { useStyles } from "./AddTask.styles";
 import { useDispatch } from "react-redux";
 import { addTask } from "@redux/taskBoardsReducer";
@@ -32,9 +31,8 @@ const AddTask = ({ open, setOpen }: { open: boolean; setOpen: Function }) => {
   const { classes } = useStyles();
 
   const dispatch = useDispatch();
-  const largeScreen = useMediaQuery(theme.breakpoints.up("lg")); // screens larger than 1200px
-  const mediumScreen = useMediaQuery(theme.breakpoints.between("md", "lg")); // screens between 900px and 1200px
-  const smallScreen = useMediaQuery(theme.breakpoints.down("md")); // screens smaller than 900px
+  const largeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const mediumScreen = useMediaQuery(theme.breakpoints.between("md", "lg"));
 
   const handleClose = () => setOpen(false);
   const handleNameChange = (event: {
@@ -47,31 +45,27 @@ const AddTask = ({ open, setOpen }: { open: boolean; setOpen: Function }) => {
     target: { value: React.SetStateAction<string> };
   }) => setTaskStatus(event.target.value);
   const handleSubmit = () => {
-    // console.log(taskName, taskDescription, taskStatus);
-
     let hasErrors = false;
     let newErrors = { name: "", description: "", status: "" };
 
-    // Validate title
     if (!taskName.trim()) {
       newErrors.name = "Name is required";
       hasErrors = true;
     }
 
-    // Validate description
     if (!taskDescription.trim()) {
       newErrors.description = "Description is required";
       hasErrors = true;
     }
 
-    setErrors(newErrors); // Update error messages
+    setErrors(newErrors);
 
     if (!taskStatus) {
       newErrors.status = "Status is required";
       hasErrors = true;
     }
 
-    if (hasErrors) return; // Stop the submission if there are errors
+    if (hasErrors) return;
 
     dispatch(addTask({ taskName, taskDescription, taskStatus }));
 
@@ -81,7 +75,7 @@ const AddTask = ({ open, setOpen }: { open: boolean; setOpen: Function }) => {
   const getModalStyle = () => {
     if (largeScreen) return { width: "50%" };
     if (mediumScreen) return { width: "70%" };
-    return { width: "90%" }; // Default for small screens
+    return { width: "90%" };
   };
 
   const style = {
@@ -93,7 +87,7 @@ const AddTask = ({ open, setOpen }: { open: boolean; setOpen: Function }) => {
     boxShadow: 24,
     p: 4,
     borderRadius: 5,
-    ...getModalStyle(), // Apply the responsive width
+    ...getModalStyle(),
   };
 
   return (

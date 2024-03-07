@@ -100,9 +100,28 @@ const taskBoardsSlice = createSlice({
         statusCategory.tasks.splice(index, 1);
       }
     },
+    toggleSortTasks: (state, action) => {
+      const { status } = action.payload;
+      const statusCategory = state.find((category) => category.name === status);
+
+      if (statusCategory) {
+        if (statusCategory.sortOrder === "asc") {
+          statusCategory.tasks.sort((a, b) => b.title.localeCompare(a.title));
+          statusCategory.sortOrder = "desc";
+        } else {
+          statusCategory.tasks.sort((a, b) => a.title.localeCompare(b.title));
+          statusCategory.sortOrder = "asc";
+        }
+      }
+    },
   },
 });
-export const { addTask, deleteTask, updateTaskStatus, editTask } =
-  taskBoardsSlice.actions;
+export const {
+  addTask,
+  deleteTask,
+  updateTaskStatus,
+  editTask,
+  toggleSortTasks,
+} = taskBoardsSlice.actions;
 
 export default taskBoardsSlice.reducer;

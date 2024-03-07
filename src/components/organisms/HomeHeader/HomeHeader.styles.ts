@@ -16,7 +16,7 @@ export const useStyles = makeStyles()((theme) => {
       display: "flex",
       alignItems: "center",
       alignContent: "center",
-      width: "14%",
+      width: "11%",
     },
   };
 });

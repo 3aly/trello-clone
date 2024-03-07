@@ -9,7 +9,7 @@ export const useStyles = makeStyles()((theme) => {
       alignItems: "center",
       justifyContent: "center",
       minHeight: "100vh",
-      backgroundColor: "",
+      backgroundColor: theme.palette.primary.main,
       padding: theme.spacing(3),
     },
     inputField: {

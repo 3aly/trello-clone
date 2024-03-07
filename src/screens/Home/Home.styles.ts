@@ -8,7 +8,7 @@ export const useStyles = makeStyles()((theme) => {
 
       input: {
         // height: "10px",
-        color: "white",
+        color: theme.palette.primary.contrastText,
         // lineHeight: "1px", // Add this line to maintain vertical centering
 
         // textAlign: "center", // Add this line to center the placeholder text

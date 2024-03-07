@@ -47,8 +47,9 @@ export const useStyles = makeStyles()((theme) => {
     },
     board: {
       // backgroundColor: "#0079bf",
-      minHeight: "100vh",
+      width: "30%",
       padding: "20px",
+      flex: 0.3,
       // color: "#0079bf",
     },
     column: {

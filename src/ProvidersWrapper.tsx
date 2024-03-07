@@ -3,7 +3,8 @@ import React from "react";
 import { ReactElement } from "react";
 import store from "./redux/store";
 import { ThemeProvider } from "@emotion/react";
-import { theme } from "@constants/theme";
+import { useSelector } from "react-redux";
+import { darkTheme, lightTheme } from "@constants/theme";
 export function ProvidersWrapper({
   children,
 }: {
@@ -11,9 +12,7 @@ export function ProvidersWrapper({
 }) {
   return (
     <>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
-      </Provider>
+      <Provider store={store}>{children}</Provider>
     </>
   );
 }
