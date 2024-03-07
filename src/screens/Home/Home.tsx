@@ -6,25 +6,11 @@ import { useSelector } from "react-redux";
 function Home() {
   const taskBoards = useSelector(
     (state: { boards: [{ name: string; tasks: [] }] }) => {
-      console.log(state);
       return state.boards;
     }
   );
-  // console.log("taskBoards", taskBoards);
   return (
-    <div
-      //   maxWidth="xs"
-      style={
-        {
-          // backgroundColor: "red",
-          // padding: "20px",
-          // borderRadius: "8px",
-          // flex: 1,
-          // width: "100%",
-          // height: "100%",
-        }
-      }
-    >
+    <div>
       <HomeHeader />
       <div style={{ display: "flex" }}>
         {taskBoards?.map((item: { name: string; tasks: [] }, index) => {

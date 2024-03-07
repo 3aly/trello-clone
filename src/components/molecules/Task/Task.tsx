@@ -19,19 +19,17 @@ import { deleteTask } from "@redux/taskBoardsReducer";
 import { useDispatch } from "react-redux";
 import { EditTask } from "@modals/index";
 import { useState } from "react";
-const Task = ({
-  task,
-  index,
-  onDragStart,
-}: {
+
+type TaskProps = {
   task: {
     title: string;
     description: string;
     status: "Not Started" | "In Progress" | "Finished";
   };
   index: number;
-  onDragStart: (event: React.DragEvent<HTMLDivElement>, index: number) => void; // Add this type
-}) => {
+  onDragStart: (event: React.DragEvent<HTMLDivElement>, index: number) => void;
+};
+const Task = ({ task, index, onDragStart }: TaskProps) => {
   const { classes } = useStyles();
   const dispatch = useDispatch();
   type TaskStatus = "Not Started" | "In Progress" | "Finished";
