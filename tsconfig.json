@@ -16,12 +16,15 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      // "@components/*": ["./src/components/*"],
-      // "@navigation/*": ["./src/navigation/*"],
-      // "@screens/*": ["./src/screens/*"],
-      // "@assets/*": ["./src/assets/*"],
-      // "@hooks/*": ["./src/hooks/*"],
-      // "@utils/*": ["./src/utils/*"]
+      "@components/*": ["./src/components/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@modals/*": ["./src/modals/*"],
+      "@fakers/*": ["./src/fakers/*"]
     }
   },
   "include": ["src"]
