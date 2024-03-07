@@ -11,20 +11,21 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Perform login logic here...
-    navigate("/splash"); // Navigate to the splash screen after login
+    navigate("/splash");
   };
 
   const { classes } = useStyles();
 
   return (
-    <div
+    <Container
       //   maxWidth="xs"
       style={{
         flex: 1,
-        backgroundColor: COLORS.primary,
-        // padding: "20px",
-        // borderRadius: "8px",
+        backgroundColor: "red",
+        padding: "20px",
+        width: "50%",
+        height: "70%",
+        borderRadius: "8px",
       }}
     >
       <Box
@@ -99,7 +100,7 @@ function Login() {
           </Button>
         </Box>
       </Box>
-    </div>
+    </Container>
   );
 }
 
