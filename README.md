@@ -24,14 +24,31 @@ Flowrello is a dynamic and intuitive Kanban board project designed to help teams
 
 ## Installation
 
-To set up Flowrello locally, follow these steps:
+Follow these steps to set up Flowrello locally:
 
-1. Clone the repository:
+1. **Clone the repository:**
 
-```bash
-git clone https://github.com/3aly/flowrello.git
-cd flowrello
+    ```bash
+    git clone https://github.com/3aly/flowrello.git
+    ```
 
-npm install
+2. **Navigate to the project directory:**
 
-npm start
+    ```bash
+    cd flowrello
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4. **Start the development server:**
+
+    ```bash
+    npm start
+    ```
+
+   This will launch Flowrello in your default web browser. Navigate to `http://localhost:3000` to start organizing your projects!
+
