@@ -11,6 +11,7 @@ module.exports = {
       "@redux": path.resolve(__dirname, "src/redux"),
       "@fakers": path.resolve(__dirname, "src/fakers"),
       "@modals": path.resolve(__dirname, "src/modals"),
+      "@types": path.resolve(__dirname, "src/types"),
       // Add other aliases as needed
     },
   },

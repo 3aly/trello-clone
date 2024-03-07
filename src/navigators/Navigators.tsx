@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Box } from "@mui/material";
 import { Home, Login, SplashScreen } from "@screens/index";
 import { useStyles } from "./Navigators.styles";
 

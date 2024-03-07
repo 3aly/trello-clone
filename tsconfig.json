@@ -6,7 +6,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -24,7 +24,8 @@
       "@utils/*": ["./src/utils/*"],
       "@redux/*": ["./src/redux/*"],
       "@modals/*": ["./src/modals/*"],
-      "@fakers/*": ["./src/fakers/*"]
+      "@fakers/*": ["./src/fakers/*"],
+      "@types/*": ["./src/types/*"]
     }
   },
   "include": ["src"]

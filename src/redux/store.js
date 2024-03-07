@@ -1,27 +1,35 @@
-// store.js or wherever your store is configured
-
 import { configureStore } from "@reduxjs/toolkit";
 import taskBoardsReducer from "./taskBoardsReducer";
 import themeReducer from "./themeReducer";
-import { loadState, saveState } from "@utils/localStorage";
+import storage from "redux-persist/lib/storage";
+import { combineReducers } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
 
-const preloadedState = loadState();
+const persistConfig = {
+  key: "root",
+  storage,
+};
+const rootReducer = combineReducers({
+  theme: themeReducer,
+  boards: taskBoardsReducer,
+});
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = configureStore({
-  reducer: {
-    theme: themeReducer,
-
-    boards: taskBoardsReducer,
-  },
-  preloadedState, // Use the loaded or default state
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [
+          "persist/PERSIST",
+          "persist/REHYDRATE",
+          "persist/PAUSE",
+          "persist/PERSIST",
+          "persist/PURGE",
+          "persist/REGISTER",
+        ],
+      },
+    }),
 });
 
-// Make sure to update the store when changes occur
-store.subscribe(() => {
-  saveState(store.getState().boards);
-});
-// store.subscribe(() => {
-//   localStorage.setItem("tasks", JSON.stringify(store.getState()));
-// });
-
-export default store;
+export const persistor = persistStore(store);

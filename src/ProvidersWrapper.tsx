@@ -1,10 +1,8 @@
 import { Provider } from "react-redux";
-import React from "react";
 import { ReactElement } from "react";
-import store from "./redux/store";
-import { ThemeProvider } from "@emotion/react";
-import { useSelector } from "react-redux";
-import { darkTheme, lightTheme } from "@constants/theme";
+import { persistor, store } from "./redux/store";
+
+import { PersistGate } from "redux-persist/integration/react";
 export function ProvidersWrapper({
   children,
 }: {
@@ -12,7 +10,11 @@ export function ProvidersWrapper({
 }) {
   return (
     <>
-      <Provider store={store}>{children}</Provider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          {children}
+        </PersistGate>
+      </Provider>
     </>
   );
 }
